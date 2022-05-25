@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Handling</title>
+    <style>
+        /*Reset*/
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing:border-box;
+            font-family:sans-serif;
+        }
+
+        nav{
+            background-color:#ebca14;
+            max-width: 400px;
+            margin:0 auto;
+            height:50px;
+            line-height: 50px;
+            padding-left: 20px;
+        }
+
+        /* Container */
+        .container .frm,
+        .container .list{
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        .container form{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .container form input,
+        .container form select{
+            height: 30px;
+        }
+
+        .container button{
+            padding: 7px 20px;
+            border: none;
+            background-color: #ebca14;
+            cursor: pointer;    
+        }
+
+        /*Items*/
+
+        .container .list ul{
+            list-style: none;
+            margin-top: 10px;
+        }
+        .container .list ul li{
+            padding: 20px;
+            border: 1px solid #000;
+            border-radius: 10px;
+            margin-bottom: 2px;
+        }
+        /*Bubbling and capturing*/
+        #myDiv1, #myDiv2{
+            background-color: coral;
+            padding: 50px;
+        }
+
+        #myP1, #myP2{
+            background-color: white;
+            font-size: 20px;
+            border: 1px solid black;
+            padding: 20px;
+        }
+        /*event types*/
+        #box{
+            width: 500px;
+            height: 300px;
+            background-color:darksalmon;
+        }
+    </style>
+</head>
+<body>
+    <!--navigation bar-->
+    <nav id="navbar">
+        <h2 id="hdt">Shopping List</h2>
+    </nav>
+    <!--Container-->
+    <div class="container">
+        <div class="frm">
+            <h3 id="frmt" style="text-transform:uppercase">Add Items</h3>
+            <form action="">
+                <input type="text">
+                 <select>
+                     <option value="red">Red</option>
+                     <option value="green">Green</option>
+                     <option value="blue">Blue</option>
+                     <option value="yellow">Yellow</option>
+                 </select>
+                 <button type="submit">Submit</button><br>
+                 
+            </form>
+            <div id="out"></div>
+        </div>
+        <div class="list">
+            <h3>Shopping Items</h3>
+            <ul id="li-item">
+                <li class="items">Item 1</li>
+                <li class="items">Item 2</li>
+                <li class="items">Item 3</li>
+                <li class="items">Item 4</li>
+                <li class="items">Item 5</li>
+            </ul>
+            <div>
+                <h2>Testing....</h2>
+            </div>
+        </div>
+        <div id="output"></div>
+        <!--<button onclick="btnClick(this.textContent)">Click Here</button>
+        
+            events
+        -->
+        <button id="c-btn">Click Here</button>
+        <button id="i-btn">Change Items</button>
+        <button id="e-btn" class="sample btn kvc">Sample Button</button>
+
+        <!--Bubbling and capturing-->
+        <div id="myDiv1">
+            <h2>Bubbling</h2>
+            <p id="myP1">Click me1!</p>
+        </div>
+        <br>
+        <div id="myDiv2">
+            <h2>Bubbling</h2>
+            <p id="myP2">Click me2!</p>
+        </div>
+        <br>
+
+        <!--Remove event listeners-->
+        <button id="ev-btn">Click the button</button>
+        <button id="rm-btn">Remove the button</button>
+
+        <br>
+        <br>
+        <!--Event types-->
+        <button id="t-btn">Events</button>
+
+        <br><br>
+        <div id="box">
+            <h2>How are You?</h2>
+        </div>
+    </div>
+    <!--External JS-->
+    <script src= "script1.js"></script>
+    <script src="script2.js"></script>
+    <script src="script3.js"></script>
+</body>
+</html>
